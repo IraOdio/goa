@@ -1,0 +1,295 @@
+.header{
+
+}
+.row{
+    padding:5px 15px;
+}
+.col-2{
+    flex:0 0 50%;
+    display: flex;
+}
+.col-100{
+    flex:0 0 100%;
+    display: flex;
+}
+.content{
+    padding:5px 9px;
+    width: 98%;height: 100vh;
+    margin: 0 auto;
+}
+.black-Theme{
+    background-color: black;
+    color:white;
+}
+.log{
+    color:red;
+}
+.form{
+    display: flex;
+    flex-flow: column;
+    font-size:20px;
+    width: 400px;
+    padding: 40px 80px;
+    border-radius: 10px;
+}
+.form-black{
+    background-color: rgb(30,30,39);
+    color:white;
+}
+.form-Title{
+font-size:20px;
+    text-align: center;
+    margin: 10px 0;
+}
+.input-in{
+    display: inline-flex;
+    justify-content: space-between;
+}
+.input-submit{
+    width: 260px; height: 30px;
+    border-radius: 15px; border: none;
+    margin: 10px 0;
+    font-size: 19px; text-transform: uppercase;
+    align-self: center;
+}
+.alert-text{
+    font-size: 25px;
+    font-weight: bold;
+    background: black;
+    color: yellow;
+    padding: 50px 150px;
+    border-radius: 15px;
+}
+.tableRecordContent{
+    background-color: black;
+    color:white;
+    font-size: 18px;
+}
+.tableRecord{}
+.tableRecord-Titles{}
+.tableRecord-Row{
+    display: flex;
+}
+.tableRecord-Row div[class*="-Col-"]{
+display: flex;
+    justify-content: center;
+}
+.tableRecord-Col-NumberRow{
+    flex:0 0 20%;
+}
+.tRC-NumberRow-Text{
+
+}
+.tableRecord-Col-Nickname{
+flex:0 0 20%;
+}
+.tableRecord-Col-Nickname-Link{
+    color:pink;
+}
+.tableRecord-Col-Nickname-Link:hover{
+    color:deeppink;
+}
+.tableRecord-Col-Maraphon{
+flex:0 0 20%;
+}
+.tRC-Maraphon-Text{
+    color:greenyellow;
+}
+.tableRecord-Col-Score{
+flex:0 0 20%;
+}
+.tRC-Score-Text{
+
+}
+.tableRecord-Col-date-at{
+flex:0 0 20%;
+}
+.tRC-Date-Text{
+    color:yellow;
+}
+.tableRecord-Results{
+
+}
+.navLearnWrapper{
+
+}
+.navLearnTitle{
+
+}
+.navLearnList{
+
+}
+.navLearnItem{
+
+}
+.navLearnLink{
+
+}
+.link{
+    text-decoration: none;
+}
+.link-User{
+    color:red;
+}
+.link-User:hover{
+    color:pink;
+}
+.link-User:visited{
+    color:maroon;
+}
+.ProfileContent{
+    background-color: black;
+    color:white;
+    font-size: 18px;
+}
+.ProfilePage{
+    display: flex;
+    flex-flow: column;
+}
+.ProfileRow{
+    display: flex;
+    flex-flow: row wrap;
+    flex:0 0 100%;
+}
+.ProfileRow + .ProfileRow{
+    margin-top: 1em;
+}
+.ProfileInfo{
+    flex: 0 0 100%;
+    display: flex;
+    flex-flow: row wrap;
+    text-align: center;
+    border:1px solid yellow;
+}
+.ProfileInfo [class*="Profile"]{
+    margin: 1em 0;
+}
+.ProfileName,.ProfileNickname,.ProfileAge{
+    flex: 0 0 32%;
+}
+.ProfileName{
+
+}
+.ProfileNickname{
+
+}
+.ProfileAge{
+
+}
+.ProfileSelf{
+    flex:0 0 100%;
+    margin: 2em 0;
+}
+.ProfileStat{
+    display: flex;
+    flex-flow: row wrap;
+    flex:0 0 100%;
+    text-align: center;
+    height: 250px;
+    overflow: auto;
+    border-bottom: 1px solid pink;
+}
+.ProfileStatTitle{
+    flex:0 0 100%;
+    margin: 1em 0;
+}
+.ProfileStatResult{
+    flex: 0 0 100%;
+    display: flex;
+    flex-flow: row wrap;
+}
+.ProfileStatResultTitle {
+    flex: 0 0 100%;
+    display: flex;
+    flex-flow: row wrap;
+    padding: 1em 0;
+}
+.ProfileStatColumn{
+    display: flex;
+    flex-flow: column;
+    flex: 0 0 32%;
+}
+.ProfileStatColumn-Maraphon-value{
+    color:greenyellow;
+}
+.ProfileStatColumn-Score-value{
+    color: pink;
+}
+.ProfileStatColumn-Date-value{
+    color:yellow;
+}
+.ProfileCompare{
+    display: flex;
+    flex-flow: column;
+    flex: 0 0 100%;
+    text-align: center;
+
+}
+.ProfileCompareTitle{
+    margin: 1em 0;
+}
+.ProfileCompare-ListProfiles{
+
+}
+.ListProfiles-Title{
+    margin: 1em 0;
+}
+.ListProfiles-Result{
+    display: inline-flex;
+    flex-flow: column;
+    overflow: auto;
+    height: 150px;
+}
+.ListProfiles-ButtonProfile{
+    outline: none;
+    border:1px solid yellow;
+    padding: 5px 45px;
+    background: black;
+    color:pink;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: 0.7s;
+}
+.ListProfiles-ButtonProfile:hover{
+    border: 1px solid greenyellow;
+
+}
+.ListProfiles-ButtonProfile + .ListProfiles-ButtonProfile{
+    margin-top: 1em ;
+}
+
+.ProfileCompare-Result{
+    overflow: auto;
+    height: 150px;
+}
+.ProfileCompare-Row{
+    display: flex;
+    flex-flow: row wrap;
+    flex:0 0 100%;
+}
+.ProfileCompare-Col-3{
+    flex:0 0 30%;
+}
+.ProfileCompare-Col-7{
+
+    flex:0 0 70%;
+}
+.PC-Result-Row{
+    display: flex;
+    flex-flow: row wrap;
+}
+.PC-Result-Row [class*="PC-Result"]{
+    flex:0 0 33%;
+}
+.PC-Result-Maraphon{
+    color:greenyellow;
+}
+.PC-Result-Score{
+    color:pink;
+}
+.PC-Result-Date{
+    color:yellow;
+}
+.CompareNicknameResultJs{
+    color:orange;
+}
