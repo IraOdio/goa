@@ -1,6 +1,5 @@
 window.onload = function () {
     //document.body.classList.add('loaded_hiding');
-    whiteAlert();
     main();
     window.setTimeout(function () {
         document.body.classList.add('loaded');
@@ -18,18 +17,7 @@ console.log("%cExample %s", css, 'all code runs happy');
 * .maraphon - ???
 * */
 
-function whiteAlert(){
-    let whiteAlertHome = document.getElementById('whiteAlertHome');
-    let buttonCloseThis = document.getElementById('buttonCloseThis');
-    buttonCloseThis.onclick = function(){
-        whiteAlertHome.style="top:-50%";
-        setTimeout(function () {
-            whiteAlertHome.style="display:none;"
-            document.body.classList.remove('firstVisitedBody');
-        },700);
-    }
 
-}
 function main() {
     /*region --------------------lowLevelProcedureProlog----------------------------*/
     //Переменные DOM-Интерфейса >>>>>>>>>>>>>>>>>>>>> begin
@@ -63,7 +51,8 @@ function main() {
     // Классы для DOM-Элементов >>>>>>>>>>>>>> end
     var canvas = document.getElementById('index');
     var labelFps = document.getElementById('label_fps');
-    var showscene = thisPOST.getAttribute('data-showscene');
+    //var showscene = thisPOST.getAttribute('data-showscene');
+    var showscene = 'maraphon2';
     var kW, kH;
     kW = 0.97;
     kH = 0.89;
@@ -93,8 +82,9 @@ function main() {
         var skybox = BABYLON.Mesh.CreateBox("skyBox", 700.0, devObj.scene);
         var skyboxMaterial = new BABYLON.StandardMaterial("skyBox", devObj.scene);
         skyboxMaterial.backFaceCulling = false;
-        skyboxMaterial.reflectionTexture = new BABYLON.CubeTexture("res/textures/TropicalSunnyDay/TropicalSunnyDay", devObj.scene);
-        skyboxMaterial.reflectionTexture.coordinatesMode = BABYLON.Texture.SKYBOX_MODE;
+        // #TEXTURE REMOVE
+        // skyboxMaterial.reflectionTexture = new BABYLON.CubeTexture("res/textures/TropicalSunnyDay/TropicalSunnyDay", devObj.scene);
+        //skyboxMaterial.reflectionTexture.coordinatesMode = BABYLON.Texture.SKYBOX_MODE;
         skyboxMaterial.diffuseColor = new BABYLON.Color3(0, 0, 0);
         skyboxMaterial.specularColor = new BABYLON.Color3(0, 0, 0);
         skyboxMaterial.disableLighting = true;
@@ -109,10 +99,11 @@ function main() {
         var materialChess = new BABYLON.StandardMaterial('materialChess', devObj.scene);
         materialChess.invertNormalMapX = true;
         materialChess.invertNormalMapY = true;
-        var textureChess = new BABYLON.Texture('res/textures/chess.jpg', devObj.scene);
-        textureChess.uScale = 8;
-        textureChess.vScale = 8;
-        materialChess.diffuseTexture = textureChess;
+        // #TEXTURE REMOVE
+        //var textureChess = new BABYLON.Texture('res/textures/chess.jpg', devObj.scene);
+        // textureChess.uScale = 8;
+        // textureChess.vScale = 8;
+        // materialChess.diffuseTexture = textureChess;
         planeChess.material = materialChess;
         devObj.meshes = {meshPlaneChess: planeChess};
         devObj.forDrawText = {};
@@ -133,15 +124,12 @@ function main() {
         }
         if(showscene=='maraphon1'){
             easyMaraphon1(devObj);
-            hideInfo.setAttribute('data-ismaraphon','Марафон №1');
         }
         if(showscene=='maraphon2'){
             marafon1(devObj);
-            hideInfo.setAttribute('data-ismaraphon','Марафон №2');
         }
         if(showscene=='maraphonN'){
             marafon2(devObj);
-            hideInfo.setAttribute('data-ismaraphon','Марафон ТТТ');
         }
 
 
@@ -1894,12 +1882,15 @@ function main() {
                            result = false;
                        }
                     });
+                    result = true;
                     if(result){
-                        lastStage(idInterval);
+                        lastStage2(idInterval);
                         inputText.remove();
                         buttonAdd.remove();
+
                         //devObj.maraphon.stage4();
                     }
+
 
                 };
             },
@@ -2025,6 +2016,7 @@ function main() {
             }
         };
         devObj.maraphon.stage0();
+        // stage0 -> stage2 -> stage3
 
     }
     function marafon2(devObj) {
@@ -2353,7 +2345,8 @@ function main() {
     //крутая текстура ; Возвращает material
     function niceTextureAlpha(name, devObj) {
         let material = new BABYLON.StandardMaterial(name, devObj.scene);
-        material.reflectionTexture = new BABYLON.CubeTexture("res/textures/TropicalSunnyDay/TropicalSunnyDay", devObj.scene);
+        // #TEXTURE REMOVE
+        //material.reflectionTexture = new BABYLON.CubeTexture("res/textures/TropicalSunnyDay/TropicalSunnyDay", devObj.scene);
         material.diffuseColor = new BABYLON.Color3(0, 0, 0);
         material.emissiveColor = new BABYLON.Color3(0.5, 0.5, 0.5);
         material.alpha = 0.2;
@@ -2436,6 +2429,30 @@ function main() {
                 //alert('Вы согласились на запись результата');
                 var params = {nickname:nickname,score:result,maraphon:maraphoni};
                 ajaxSend(params);
+
+            } else {
+                alert ('Вы отказались от записи результата');
+            }
+        } else{
+            //var res = prompt('')
+            alert('Для записи результата, пожалуйста авторизируйтесь.');
+        }
+    }
+    function lastStage2(idInterval){
+        console.log('laststage2');
+        clearInterval(idInterval);
+        //var isSession = hideInfo.getAttribute('data-issession');
+        var isSession = 'true';
+        //var maraphoni = hideInfo.getAttribute('data-ismaraphon');
+        var secundomer = document.getElementById('thisInfoValue');
+        var result = secundomer.textContent;
+        if(isSession=='true'){
+            //var nickname = document.querySelector('.userBlock .link-User').textContent;
+            var res = confirm('Марафон закончен. Ваш никнейм: ' + 'Noname123' + ". Ваш результат: " + result + "; Записать результат?");
+            if(res){
+                //alert('Вы согласились на запись результата');
+               // var params = {nickname:nickname,score:result,maraphon:maraphoni};
+               // ajaxSend(params);
 
             } else {
                 alert ('Вы отказались от записи результата');
