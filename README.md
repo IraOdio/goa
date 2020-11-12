@@ -13,8 +13,8 @@ game object - algorithm
 -> Поиск минимального значения из трех чисел;  
 -> Бинарный поиск значения в массиве;  
 -> Процесс построения рекурсивного алгоритма вычисления факториала пяти;  
--> Процесс построения рекурсивного алгоритма вычисления факториала четырех. 
-Ссылка на демо-версию ->  https://iraodio.github.io/goa/ 
+-> Процесс построения рекурсивного алгоритма вычисления факториала четырех.    
+Ссылка на демо-версию ->  https://iraodio.github.io/goa/     
 **Немного картиночек**  
 ![alt text](https://github.com/IraOdio/goa/blob/master/img_preview/img1.png?raw=true)
 ![alt text](https://github.com/IraOdio/goa/blob/master/img_preview/img2.png?raw=true)
