@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Демо-версия</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+<header class="header">
+    <div class="canvasInfo">
+        <div class="row row-nowrap">
+            <div class="col-67">
+                <div id="secundomer" class="thisInfo">
+                    <div class="thisLabel">
+                        Время:
+                    </div>
+                    <div id="thisInfoValue">00:00</div>
+                </div>
+                <div class="fpsValue">
+                    Частота кадров:
+                    <span id="label_fps"></span>
+                </div>
+            </div>
+
+            <div class="col-25 col-align-mid">
+                <div class="nav black-border">
+                    <a class="nav-link" href="/index.php">Главная</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="main">
+    <div class="flexRow RowRelative">
+        <canvas id="index" width="700" height="500" class="index">
+        </canvas>
+        <div id="siGUI" class="open">
+            <div class="containerOpenClose">
+                <button id="OpenClose" >?</button>
+            </div>
+            <div class="container-siGUI">
+                <button class="siGUI-Button" id="screenButton">Сделать скриншот</button>
+                <form style="display: none" action="" method="GET">
+                    <button name="showscene" value="start" class="siGUI-Button" id="buttonMaraphon1">Начальная сцена
+                    </button>
+                    <button name="showscene" value="maraphon1" class="siGUI-Button animateButton" id="buttonMaraphon2">Марафон №1
+                    </button>
+                    <button name="showscene" value="maraphon2" class="siGUI-Button animateButton" id="buttonMaraphon3">Марафон №2
+                    </button>
+                    <!--                    <button name="showscene" value="maraphonN" class="siGUI-Button" id="buttonMaraphon1">МарафонNNN-->
+                    <!--                    </button>-->
+                </form>
+                <p>ДЕМО-ВЕРСИЯ</p>
+                <p>Здесь предоставлен марафон №2, содержащий всего 3 этапа, каждому этапу заранее присвоен статус пройденного, так что вы можете пройти
+                к следующему не решая этот, нажав кнопку "Пройти дальше".</p>
+            </div>
+            <hr>
+            <div class="container-siGUI" id="GUIFROMSCENE" data-positionX="-10" data-positionY="15" data-positionZ="5">
+                <button class="siGUI-Button" id="controlStageButton">Пройти дальше</button>
+                <div id="controlStage-smsOkno" class="controlStage-smsOkno"></div>
+            </div>
+            <hr>
+            <div class="container-siGUI" id="INFOFROMSCENE">
+            </div>
+
+        </div>
+        <div id="siGUI-Down">
+            <button id="siGUI-Down-ControlButton">↑</button>
+            <div id="siGUI-Down-Text">
+            </div>
+        </div>
+    </div>
+    <div id="debug">
+       </div>
+</div>
+<script src="./../libs/earcut.min.js"></script>
+<script src="./../libs/babylon.js"></script>
+<script src="./../libs/babylon.gui.min.js"></script>
+<script src="./../libs/babylon.gridMaterial.min.js"></script>
+<script src="./index.js"></script>
+</body>
+
+</html>
